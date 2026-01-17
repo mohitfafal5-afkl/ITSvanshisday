@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #fdf6e3;
+  font-family: Arial, sans-serif;
+}
+
+.page{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TOP AREA */
+.header{
+  text-align: center;
+  padding-top: 20px 0;
+}
+
+/* CNTER AREA */
+.main{
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+
+/* Title spacing*/
+h1 {
+  margin: 0;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Cake base */
+.cake {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  height: 120px;
+  background: #d2691e;
+  border-radius: 0 0 10px 10px;
+  cursor: pointer;
+}
+.layer{
+  height: 50px;
+  border-radius: 10px;
+}
+
+/* top layer */
+.layer-top{
+  width: 150px;
+  background: #f4a261;
+  border-bottom: 3px solid #e76f51;
+  z-index: 3;
+}
+
+/* middle layer */
+.layer-middle{
+  width: 220px;
+  background: #a0522d;
+  margin-top: -5px;
+  border-bottom: 2px solid #e76f51;
+  z-index: 2;
+}
+
+/* bottom layer */
+.layer-bottom{
+  width: 260px;
+  background: #8b4513;
+  margin-top: -5px;
+  z-index: 1;
+}
+/* Candles */
+.candles {
+  position: absolute;
+  top: -50px;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.candle {
+  width: 10px;
+  height: 40px;
+  background: white;
+  border-radius: 3px;
+  position: relative;
+}
+
+/* Flame */
+.flame{
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 16px;
+  background: orange;
+  border-radius: 50% 50% 50% 50% ;
+  opacity: 0.8;
+  animation: flicker 0.15s infinite alternate;
+  transition: opacity 0.5s ease;
+}
+
+.flame.out{
+  opacity: 0;
+  animation: none;
+}
+ /* Flame animation */
+ @keyframes flicker{
+  from{
+    transform: translateX(-50%) scale(1);
+    opacity: 0.08;
+  }
+  to {
+    transform: translateX(-50%) scale(1.2);
+      opacity: 1;  
+  }
+ }
